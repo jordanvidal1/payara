@@ -59,15 +59,15 @@ const pricingData = [
 export default function Home() {
   return (
     <ThemeProvider>
-      <main className="min-h-screen bg-gray-50 px-4 py-16 dark:bg-gray-900">
+      <main className="min-h-screen bg-violet-50 px-4 py-16 dark:bg-gray-800">
         <ThemeToggle />
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl">
+            <h1 className="text-4xl font-bold text-violet-950 dark:text-gray-50 sm:text-5xl">
               Powerful features for{" "}
               <span className="gradient-text">powerful creators</span>
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
               Choose a plan that's right for you
             </p>
           </div>

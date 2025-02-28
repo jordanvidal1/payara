@@ -29,21 +29,39 @@ export function PricingCard({
         isHighlighted && "pricing-card-highlighted"
       )}
     >
-      <h3 className="text-2xl font-semibold">{title}</h3>
+      <h3
+        className={clsx(
+          "text-2xl font-semibold",
+          isHighlighted ? "pricing-title-highlighted" : "pricing-title"
+        )}
+      >
+        {title}
+      </h3>
       <p
         className={clsx(
           "mt-2 text-sm",
-          isHighlighted ? "text-gray-100" : "text-gray-500 dark:text-gray-400"
+          isHighlighted
+            ? "pricing-description-highlighted"
+            : "pricing-description"
         )}
       >
         {description}
       </p>
       <p className="mt-8">
-        <span className="text-4xl font-bold">${price}</span>
+        <span
+          className={clsx(
+            "text-4xl font-bold",
+            isHighlighted ? "text-white" : "text-violet-950 dark:text-violet-50"
+          )}
+        >
+          ${price}
+        </span>
         <span
           className={clsx(
             "text-sm",
-            isHighlighted ? "text-gray-100" : "text-gray-500 dark:text-gray-400"
+            isHighlighted
+              ? "pricing-description-highlighted"
+              : "pricing-description"
           )}
         >
           /Month
@@ -61,24 +79,34 @@ export function PricingCard({
         {features.map((feature, index) => (
           <li key={index} className="flex items-center space-x-3">
             {feature.included ? (
-              <CheckIcon className="h-5 w-5 text-green-500" />
+              <CheckIcon
+                className={clsx(
+                  "h-5 w-5",
+                  isHighlighted
+                    ? "feature-icon-yes-highlighted"
+                    : "feature-icon-yes"
+                )}
+              />
             ) : (
               <XMarkIcon
                 className={clsx(
                   "h-5 w-5",
                   isHighlighted
-                    ? "text-gray-300"
-                    : "text-gray-400 dark:text-gray-600"
+                    ? "feature-icon-no-highlighted"
+                    : "feature-icon-no"
                 )}
               />
             )}
             <span
               className={clsx(
                 "text-sm",
-                !feature.included &&
-                  (isHighlighted
-                    ? "text-gray-300"
-                    : "text-gray-400 dark:text-gray-600")
+                feature.included
+                  ? isHighlighted
+                    ? "feature-text-included-highlighted"
+                    : "feature-text-included"
+                  : isHighlighted
+                  ? "feature-text-highlighted"
+                  : "feature-text"
               )}
             >
               {feature.name}

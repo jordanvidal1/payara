@@ -9,25 +9,82 @@
 }
 
 @layer components {
+  /* Default Card (Box/Default) */
   .pricing-card {
     @apply rounded-3xl p-8 transition-all;
-    @apply bg-gray-50 dark:bg-gray-800;
+    @apply bg-violet-100 dark:bg-gray-700; /* Background from Box/Default */
   }
 
+  /* Focused Card (Box/Focus) */
   .pricing-card-highlighted {
-    @apply bg-violet-600 text-white;
+    @apply bg-violet-700 dark:bg-violet-700 text-white shadow-lg shadow-violet-700/25; /* Background from Box/Focus */
   }
 
+  /* Card Title */
+  .pricing-title {
+    @apply text-violet-950 dark:text-violet-100; /* Title colors from Box/Default */
+  }
+  .pricing-title-highlighted {
+    @apply text-violet-50 dark:text-gray-100; /* Subtitle colors from Box/Focus */
+  }
+
+  /* Card Description */
+  .pricing-description {
+    @apply text-gray-700 dark:text-violet-100; /* Subtitle colors from Box/Default */
+  }
+  .pricing-description-highlighted {
+    @apply text-violet-50 dark:text-gray-100; /* Subtitle colors from Box/Focus */
+  }
+
+  /* Buttons */
   .pricing-button {
-    @apply mt-8 w-full rounded-lg py-3 font-medium transition-colors;
+    @apply mt-8 w-full rounded-lg py-3 font-medium transition-colors shadow-sm;
   }
 
+  /* Primary Button - for highlighted card */
   .pricing-button-highlighted {
-    @apply bg-white text-violet-600 hover:bg-gray-100;
+    @apply bg-orange-500 dark:bg-violet-50 text-white dark:text-violet-700 
+           hover:bg-orange-600 dark:hover:bg-violet-100
+           disabled:bg-violet-300 dark:disabled:bg-violet-400
+           disabled:cursor-not-allowed;
   }
 
+  /* Secondary Button - for normal cards */
   .pricing-button-normal {
-    @apply bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600;
+    @apply bg-violet-100 dark:bg-gray-600 
+           text-violet-700 dark:text-violet-300
+           hover:bg-violet-100 dark:hover:bg-gray-700
+           disabled:bg-violet-400 dark:disabled:bg-gray-500
+           disabled:text-violet-300 dark:disabled:text-violet-400
+           disabled:cursor-not-allowed;
+  }
+
+  /* Feature Icons */
+  .feature-icon-yes {
+    @apply text-violet-500 dark:text-violet-300; /* IconYes from Box/Default */
+  }
+  .feature-icon-yes-highlighted {
+    @apply text-violet-100 dark:text-violet-200; /* IconYes from Box/Focus */
+  }
+  .feature-icon-no {
+    @apply text-violet-300 dark:text-gray-500; /* IconNo from Box/Default */
+  }
+  .feature-icon-no-highlighted {
+    @apply text-violet-500 dark:text-violet-500; /* IconNo from Box/Focus */
+  }
+
+  /* Feature Text */
+  .feature-text {
+    @apply text-violet-400 dark:text-gray-400; /* TextNo from Box/Default */
+  }
+  .feature-text-highlighted {
+    @apply text-violet-400 dark:text-violet-400; /* TextNo from Box/Focus */
+  }
+  .feature-text-included {
+    @apply text-violet-700 dark:text-violet-300;
+  }
+  .feature-text-included-highlighted {
+    @apply text-violet-50 dark:text-violet-50;
   }
 }
 
