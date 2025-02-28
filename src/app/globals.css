@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .pricing-card {
+    @apply rounded-3xl p-8 transition-all;
+    @apply bg-gray-50 dark:bg-gray-800;
+  }
+
+  .pricing-card-highlighted {
+    @apply bg-violet-600 text-white;
+  }
+
+  .pricing-button {
+    @apply mt-8 w-full rounded-lg py-3 font-medium transition-colors;
+  }
+
+  .pricing-button-highlighted {
+    @apply bg-white text-violet-600 hover:bg-gray-100;
+  }
+
+  .pricing-button-normal {
+    @apply bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600;
+  }
+}
+
+/* Gradient text animation */
+.gradient-text {
+  @apply bg-gradient-to-r from-violet-600 to-violet-400 bg-clip-text text-transparent;
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
