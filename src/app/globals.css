@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --font-satoshi: "Satoshi";
+  }
+
   body {
-    @apply antialiased;
+    @apply bg-violet-50 dark:bg-gray-800;
   }
 }
 
@@ -12,40 +16,43 @@
   /* Default Card (Box/Default) */
   .pricing-card {
     @apply rounded-3xl p-8 transition-all;
-    @apply bg-violet-100 dark:bg-gray-700; /* Background from Box/Default */
+    @apply bg-violet-100 dark:bg-gray-700;
   }
 
   /* Focused Card (Box/Focus) */
   .pricing-card-highlighted {
-    @apply bg-violet-700 dark:bg-violet-700 text-white shadow-lg shadow-violet-700/25; /* Background from Box/Focus */
+    @apply bg-violet-700 dark:bg-violet-700 text-white shadow-lg shadow-violet-700/25;
   }
 
   /* Card Title */
   .pricing-title {
-    @apply text-violet-950 dark:text-violet-100; /* Title colors from Box/Default */
+    @apply text-violet-950 dark:text-violet-100;
   }
   .pricing-title-highlighted {
-    @apply text-violet-50 dark:text-gray-100; /* Subtitle colors from Box/Focus */
+    @apply text-violet-50 dark:text-gray-100;
   }
 
   /* Card Description */
   .pricing-description {
-    @apply text-gray-700 dark:text-violet-100; /* Subtitle colors from Box/Default */
+    @apply text-gray-700 dark:text-violet-100;
   }
   .pricing-description-highlighted {
-    @apply text-violet-50 dark:text-gray-100; /* Subtitle colors from Box/Focus */
+    @apply text-violet-50 dark:text-gray-100;
   }
 
   /* Buttons */
   .pricing-button {
-    @apply mt-8 w-full rounded-lg py-3 font-medium transition-colors shadow-sm;
+    @apply mt-8 w-full rounded-lg py-3 font-medium transition-all;
   }
 
   /* Primary Button - for highlighted card */
   .pricing-button-highlighted {
     @apply bg-orange-500 dark:bg-violet-50 text-white dark:text-violet-700 
+           shadow-sm shadow-orange-500/25 dark:shadow-violet-50/25
+           hover:shadow-md hover:shadow-orange-500/25 dark:hover:shadow-violet-50/25
            hover:bg-orange-600 dark:hover:bg-violet-100
            disabled:bg-violet-300 dark:disabled:bg-violet-400
+           disabled:shadow-none
            disabled:cursor-not-allowed;
   }
 
@@ -53,32 +60,45 @@
   .pricing-button-normal {
     @apply bg-violet-100 dark:bg-gray-600 
            text-violet-700 dark:text-violet-300
-           hover:bg-violet-100 dark:hover:bg-gray-700
-           disabled:bg-violet-400 dark:disabled:bg-gray-500
+           border border-violet-400 dark:border-gray-500
+           shadow-sm shadow-violet-400/25 dark:shadow-gray-500/25
+           hover:shadow-md hover:shadow-violet-400/25 dark:hover:shadow-gray-500/25
+           dark:hover:bg-gray-700 dark:hover:border-gray-400
+           disabled:bg-violet-400 disabled:border-violet-500 
+           dark:disabled:bg-gray-500 dark:disabled:border-gray-600
            disabled:text-violet-300 dark:disabled:text-violet-400
+           disabled:shadow-none
            disabled:cursor-not-allowed;
   }
 
   /* Feature Icons */
   .feature-icon-yes {
-    @apply text-violet-500 dark:text-violet-300; /* IconYes from Box/Default */
+    @apply text-violet-100 dark:text-violet-300
+           bg-violet-500 dark:bg-violet-400/10
+           p-1.5 rounded-full;
   }
   .feature-icon-yes-highlighted {
-    @apply text-violet-100 dark:text-violet-200; /* IconYes from Box/Focus */
+    @apply text-violet-600 dark:text-violet-600
+           bg-white dark:bg-white
+           p-1.5 rounded-full;
   }
   .feature-icon-no {
-    @apply text-violet-300 dark:text-gray-500; /* IconNo from Box/Default */
+    @apply text-white dark:text-white
+           bg-violet-200 dark:bg-gray-600/50
+           p-1.5 rounded-full;
   }
   .feature-icon-no-highlighted {
-    @apply text-violet-500 dark:text-violet-500; /* IconNo from Box/Focus */
+    @apply text-violet-700 dark:text-violet-700
+           bg-white/10 dark:bg-white/10
+           p-1.5 rounded-full;
   }
 
   /* Feature Text */
   .feature-text {
-    @apply text-violet-400 dark:text-gray-400; /* TextNo from Box/Default */
+    @apply text-violet-400 dark:text-gray-400;
   }
   .feature-text-highlighted {
-    @apply text-violet-400 dark:text-violet-400; /* TextNo from Box/Focus */
+    @apply text-violet-400 dark:text-violet-400;
   }
   .feature-text-included {
     @apply text-violet-700 dark:text-violet-300;
