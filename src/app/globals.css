@@ -11,7 +11,7 @@
 @layer components {
   /* Base Button */
   .btn {
-    @apply w-full rounded-xs py-2.5 transition-all;
+    @apply w-full rounded-xs py-2.5 transition-all cursor-pointer;
   }
 
   /* Primary Button - for highlighted card */
