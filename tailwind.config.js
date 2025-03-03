@@ -8,17 +8,25 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      borderRadius: {
+        xs: 4,
+        sm: 8,
+        md: 16,
+        lg: 32,
+        xl: 64,
+        pill: 99999,
+      },
       boxShadow: ({ theme }) => ({
         light: `0px 4px 24px 0px ${theme("colors.violet.400")}`,
         "light-sm": `0px 4px 14px 0px ${theme("colors.violet.400")}`,
         "light-md": `0px 4px 34px 0px ${theme("colors.violet.400")}`,
-        "light-l": `0px 4px 44px 0px ${theme("colors.violet.400")}`,
+        "light-lg": `0px 4px 44px 0px ${theme("colors.violet.400")}`,
         "light-xl": `0px 4px 54px 0px ${theme("colors.violet.400")}`,
         "light-2xl": `0px 4px 74px 0px ${theme("colors.violet.400")}`,
         dark: `0px 4px 24px 0px ${theme("colors.gray.950")}`,
         "dark-sm": `0px 4px 14px 0px ${theme("colors.gray.950")}`,
         "dark-md": `0px 4px 34px 0px ${theme("colors.gray.950")}`,
-        "dark-l": `0px 4px 44px 0px ${theme("colors.gray.950")}`,
+        "dark-lg": `0px 4px 44px 0px ${theme("colors.gray.950")}`,
         "dark-xl": `0px 4px 54px 0px ${theme("colors.gray.950")}`,
         "dark-2xl": `0px 4px 74px 0px ${theme("colors.gray.950")}`,
       }),
@@ -57,6 +65,17 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Satoshi", "sans-serif"],
+      },
+      fontSize: {
+        base: ["1rem", 1.5],
+        lg: ["2.25rem", 1.11],
+        xl: ["3rem", 1],
+      },
+      fontWeight: {
+        light: 300,
+        regular: 400,
+        medium: 500,
+        bold: 700,
       },
     },
   },

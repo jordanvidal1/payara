@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-satoshi: "Satoshi";
-  }
-
   body {
-    @apply bg-violet-50 dark:bg-gray-800;
+    @apply font-sans bg-violet-50 dark:bg-gray-800;
   }
 }
 
@@ -18,7 +14,7 @@
   }
 
   .OurPlan-Title {
-    @apply text-4xl font-bold text-violet-950 dark:text-gray-50 sm:text-5xl;
+    @apply text-xl font-bold text-violet-950 dark:text-gray-50 sm:text-5xl;
   }
 
   .OurPlan-Title-Violet {
@@ -26,18 +22,19 @@
   }
 
   .OurPlan-Subtitle {
-    @apply text-lg text-gray-600 dark:text-gray-400;
+    @apply text-gray-600 dark:text-gray-400;
   }
 
   /* Default Card (Box/Default) */
   .OurPlan-Box-Default-Background {
-    @apply rounded-3xl p-8 transition-all;
+    @apply rounded-md px-6 py-12 transition-all;
     @apply bg-violet-100 dark:bg-gray-700;
   }
 
   /* Focused Card (Box/Focus) */
   .OurPlan-Box-Focus-Background {
-    @apply bg-violet-700 dark:bg-violet-700 text-white;
+    @apply bg-violet-700 dark:bg-violet-700 text-gray-50;
+    @apply shadow-light-lg dark:shadow-dark-lg;
   }
 
   /* Card Title */
@@ -46,22 +43,22 @@
   }
 
   .OurPlan-Box-Focus-Title {
-    @apply text-white text-4xl font-medium;
+    @apply text-gray-50 text-4xl font-medium;
   }
 
   /* Card Description */
   .OurPlan-Box-Default-Subtitle {
-    @apply text-gray-700 dark:text-gray-100 text-lg;
+    @apply text-gray-700 dark:text-gray-100;
   }
 
   .OurPlan-Box-Focus-Subtitle {
-    @apply text-violet-50 dark:text-gray-100 text-lg;
+    @apply text-violet-50 dark:text-gray-100;
   }
 
   /* Card Icon */
   .OurPlan-Icon {
-    @apply p-1.5 rounded-full
-           h-6 w-6
+    @apply p-2 rounded-full
+           h-8 w-8
            flex items-center justify-center;
   }
 
@@ -72,7 +69,7 @@
 
   .OurPlan-Box-Focus-IconYes {
     @apply text-violet-600 text-xl font-bold
-           bg-white;
+           bg-gray-50;
   }
 
   .OurPlan-Box-Default-IconNo {
@@ -99,12 +96,12 @@
   }
 
   .OurPlan-Box-Focus-TextYes {
-    @apply text-white;
+    @apply text-gray-50;
   }
 
   /* Buttons */
   .Btn {
-    @apply w-full rounded-lg py-2.5 font-medium transition-all;
+    @apply w-full rounded-xs py-2.5 transition-all;
   }
 
   /* Primary Button - for highlighted card */
@@ -138,11 +135,11 @@
            hover:shadow-light-sm dark:hover:shadow-dark-sm;
 
     /* Disabled State */
-    @apply disabled:bg-white disabled:dark:bg-gray-600
+    @apply disabled:bg-gray-50 disabled:dark:bg-gray-600
            disabled:text-violet-300 
            disabled:border-violet-300 
            disabled:dark:border-gray-500 disabled:dark:text-gray-500 
-           disabled:hover:bg-white disabled:dark:hover:bg-gray-600
+           disabled:hover:bg-gray-50 disabled:dark:hover:bg-gray-600
            disabled:shadow-none disabled:dark:shadow-none;
   }
 }

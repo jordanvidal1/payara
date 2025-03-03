@@ -31,7 +31,7 @@ export function PricingCard({
     >
       <h3
         className={clsx(
-          "text-3xl font-medium",
+          "text-lg font-medium",
           isHighlighted
             ? "OurPlan-Box-Focus-Title"
             : "OurPlan-Box-Default-Title"
@@ -41,7 +41,7 @@ export function PricingCard({
       </h3>
       <p
         className={clsx(
-          "mt-2 text-sm",
+          "mt-2",
           isHighlighted
             ? "OurPlan-Box-Focus-Subtitle"
             : "OurPlan-Box-Default-Subtitle"
@@ -49,10 +49,10 @@ export function PricingCard({
       >
         {description}
       </p>
-      <p className="mt-8 flex items-center gap-1.5">
+      <p className="mt-6 flex items-center gap-1.5">
         <span
           className={clsx(
-            "text-4xl font-bold",
+            "text-xl font-bold",
             isHighlighted ? "text-white" : "text-violet-950 dark:text-violet-50"
           )}
         >
@@ -60,7 +60,6 @@ export function PricingCard({
         </span>
         <span
           className={clsx(
-            "text-sm",
             isHighlighted
               ? "OurPlan-Box-Focus-Subtitle"
               : "OurPlan-Box-Default-Subtitle"
@@ -69,7 +68,7 @@ export function PricingCard({
           / Month
         </span>
       </p>
-      <div className="mt-8">
+      <div className="mt-6">
         <button
           className={clsx(
             "Btn",
@@ -81,7 +80,7 @@ export function PricingCard({
       </div>
       <ul className="mt-8 space-y-4">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center space-x-3">
+          <li key={index} className="flex items-center space-x-4">
             {feature.included ? (
               <CheckIcon
                 className={clsx(
@@ -103,7 +102,6 @@ export function PricingCard({
             )}
             <span
               className={clsx(
-                "text-sm",
                 feature.included
                   ? isHighlighted
                     ? "OurPlan-Box-Focus-TextYes"
