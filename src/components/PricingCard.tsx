@@ -25,14 +25,16 @@ export function PricingCard({
   return (
     <div
       className={clsx(
-        "pricing-card",
-        isHighlighted && "pricing-card-highlighted"
+        "OurPlan-Box-Default-Background",
+        isHighlighted && "OurPlan-Box-Focus-Background"
       )}
     >
       <h3
         className={clsx(
-          "text-2xl font-semibold",
-          isHighlighted ? "pricing-title-highlighted" : "pricing-title"
+          "text-3xl font-medium",
+          isHighlighted
+            ? "OurPlan-Box-Focus-Title"
+            : "OurPlan-Box-Default-Title"
         )}
       >
         {title}
@@ -41,13 +43,13 @@ export function PricingCard({
         className={clsx(
           "mt-2 text-sm",
           isHighlighted
-            ? "pricing-description-highlighted"
-            : "pricing-description"
+            ? "OurPlan-Box-Focus-Subtitle"
+            : "OurPlan-Box-Default-Subtitle"
         )}
       >
         {description}
       </p>
-      <p className="mt-8">
+      <p className="mt-8 flex items-center gap-1.5">
         <span
           className={clsx(
             "text-4xl font-bold",
@@ -60,40 +62,42 @@ export function PricingCard({
           className={clsx(
             "text-sm",
             isHighlighted
-              ? "pricing-description-highlighted"
-              : "pricing-description"
+              ? "OurPlan-Box-Focus-Subtitle"
+              : "OurPlan-Box-Default-Subtitle"
           )}
         >
-          /Month
+          / Month
         </span>
       </p>
-      <button
-        className={clsx(
-          "pricing-button",
-          isHighlighted ? "pricing-button-highlighted" : "pricing-button-normal"
-        )}
-      >
-        Get Started Now
-      </button>
+      <div className="mt-8">
+        <button
+          className={clsx(
+            "Btn",
+            isHighlighted ? "Btn-Primary" : "Btn-Secondary"
+          )}
+        >
+          Get Started Now
+        </button>
+      </div>
       <ul className="mt-8 space-y-4">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center space-x-3">
             {feature.included ? (
               <CheckIcon
                 className={clsx(
-                  "h-5 w-5",
+                  "OurPlan-Icon",
                   isHighlighted
-                    ? "feature-icon-yes-highlighted"
-                    : "feature-icon-yes"
+                    ? "OurPlan-Box-Focus-IconYes"
+                    : "OurPlan-Box-Default-IconYes"
                 )}
               />
             ) : (
               <XMarkIcon
                 className={clsx(
-                  "h-5 w-5",
+                  "OurPlan-Icon",
                   isHighlighted
-                    ? "feature-icon-no-highlighted"
-                    : "feature-icon-no"
+                    ? "OurPlan-Box-Focus-IconNo"
+                    : "OurPlan-Box-Default-IconNo"
                 )}
               />
             )}
@@ -102,11 +106,11 @@ export function PricingCard({
                 "text-sm",
                 feature.included
                   ? isHighlighted
-                    ? "feature-text-included-highlighted"
-                    : "feature-text-included"
+                    ? "OurPlan-Box-Focus-TextYes"
+                    : "OurPlan-Box-Default-TextYes"
                   : isHighlighted
-                  ? "feature-text-highlighted"
-                  : "feature-text"
+                  ? "OurPlan-Box-Focus-TextNo"
+                  : "OurPlan-Box-Default-TextNo"
               )}
             >
               {feature.name}

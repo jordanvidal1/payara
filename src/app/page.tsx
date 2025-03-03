@@ -63,11 +63,11 @@ export default function Home() {
         <ThemeToggle />
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-violet-950 dark:text-gray-50 sm:text-5xl">
+            <h1 className="OurPlan-Title">
               Powerful features for{" "}
-              <span className="gradient-text">powerful creators</span>
+              <span className="OurPlan-Title-Violet">powerful creators</span>
             </h1>
-            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+            <p className="OurPlan-Subtitle mt-4">
               Choose a plan that's right for you
             </p>
           </div>
