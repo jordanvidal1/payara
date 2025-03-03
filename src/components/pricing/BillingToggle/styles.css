@@ -1,0 +1,35 @@
+.billing-toggle-container {
+  @apply flex items-center justify-center gap-4 mt-8;
+}
+
+.billing-period {
+  @apply text-gray-600 dark:text-gray-400 font-medium;
+}
+
+.billing-period-active {
+  @apply text-violet-700 dark:text-violet-300;
+}
+
+.billing-switch {
+  @apply relative inline-flex h-7 w-14 items-center rounded-full;
+  @apply transition-colors duration-200 ease-in-out;
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500;
+}
+
+.billing-switch-monthly {
+  @apply bg-gray-200 dark:bg-gray-700;
+}
+
+.billing-switch-yearly {
+  @apply bg-violet-600;
+}
+
+.billing-switch-handle {
+  @apply absolute inline-block h-5 w-5 rounded-full;
+  @apply bg-white dark:bg-violet-50;
+}
+
+.billing-discount {
+  @apply ml-2 rounded-full bg-green-100 dark:bg-green-900 px-2 py-0.5 text-sm;
+  @apply text-green-700 dark:text-green-300;
+}

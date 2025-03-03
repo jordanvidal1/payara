@@ -2,8 +2,10 @@
 
 import React from "react";
 import { ThemeProvider } from "@/components/ui/theme/ThemeContext";
+import { PricingProvider } from "@/components/ui/pricing/PricingContext";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { PricingCard } from "@/components/pricing/PricingCard";
+import { BillingToggle } from "@/components/pricing/BillingToggle";
 
 const pricingData = [
   {
@@ -59,29 +61,32 @@ const pricingData = [
 export default function Home() {
   return (
     <ThemeProvider>
-      <main className="min-h-screen our-plan-background">
-        <ThemeToggle />
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h1 className="our-plan-title">
-              Powerful features for{" "}
-              <span className="our-plan-title-violet">powerful creators</span>
-            </h1>
-            <p className="our-plan-subtitle mt-4">
-              Choose a plan that's right for you
-            </p>
+      <PricingProvider>
+        <main className="min-h-screen our-plan-background">
+          <ThemeToggle />
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <h1 className="our-plan-title">
+                Powerful features for{" "}
+                <span className="our-plan-title-violet">powerful creators</span>
+              </h1>
+              <p className="our-plan-subtitle mt-4">
+                Choose a plan that's right for you
+              </p>
+              <BillingToggle />
+            </div>
+            <div className="mt-12 sm:mt-16 lg:mt-28 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+              {pricingData.map((plan, index) => (
+                <PricingCard
+                  key={plan.title}
+                  {...plan}
+                  isHighlighted={index === 1}
+                />
+              ))}
+            </div>
           </div>
-          <div className="mt-12 sm:mt-16 lg:mt-28 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
-            {pricingData.map((plan, index) => (
-              <PricingCard
-                key={plan.title}
-                {...plan}
-                isHighlighted={index === 1}
-              />
-            ))}
-          </div>
-        </div>
-      </main>
+        </main>
+      </PricingProvider>
     </ThemeProvider>
   );
 }
