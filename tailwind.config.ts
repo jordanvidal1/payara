@@ -8,14 +8,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
-  theme: {
-    extend: {
-      colors: theme.colors,
-      fontFamily: {
-        sans: ["Satoshi", ...theme.fontFamily.sans],
-      },
-    },
-  },
+  theme,
   plugins: [],
 };
 export default config;
