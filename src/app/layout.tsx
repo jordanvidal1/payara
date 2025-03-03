@@ -2,8 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pricing Page",
-  description: "A modern pricing page with light and dark mode support",
+  title: {
+    default: "Payara",
+    template: "%s | Payara",
+  },
+  authors: [{ name: "Jordan Vidal" }],
+  creator: "Jordan Vidal",
+  publisher: "Jordan Vidal",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
