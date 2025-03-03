@@ -1,5 +1,5 @@
 import "./styles.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePricing } from "../../ui/pricing/PricingContext";
@@ -26,19 +26,30 @@ export function Price({
 }: PriceProps) {
   const { billingPeriod } = usePricing();
   const isYearly = billingPeriod === "yearly";
+  const [isFirstRender, setIsFirstRender] = useState(true);
+
+  useEffect(() => {
+    setIsFirstRender(false);
+  }, []);
 
   // Calculate yearly price with 20% discount
   const displayAmount = Math.round(isYearly ? amount * 12 * 0.8 : amount);
+
+  const animationProps = isFirstRender
+    ? {}
+    : {
+        initial: { opacity: 0, y: 5 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -5 },
+        transition: { duration: 0.2 },
+      };
 
   return (
     <p className={clsx("price-container", className)}>
       <AnimatePresence mode="wait">
         <motion.span
           key={billingPeriod}
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -5 }}
-          transition={{ duration: 0.2 }}
+          {...animationProps}
           className={clsx(
             "price-amount",
             isHighlighted ? "price-amount-highlighted" : "price-amount-default"
@@ -50,10 +61,7 @@ export function Price({
       <AnimatePresence mode="wait">
         <motion.span
           key={billingPeriod}
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -5 }}
-          transition={{ duration: 0.2 }}
+          {...animationProps}
           className={clsx(
             "price-period",
             isHighlighted ? "price-period-highlighted" : "price-period-default"
