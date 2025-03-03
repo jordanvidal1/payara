@@ -1,0 +1,11 @@
+.theme-toggle {
+  @apply absolute right-4 top-4;
+  @apply rounded-full p-2;
+  @apply transition-colors;
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+  @apply dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+}
+
+.theme-toggle-icon {
+  @apply h-5 w-5;
+}

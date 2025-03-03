@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { PricingCard } from "@/components/PricingCard";
+import { ThemeProvider } from "@/components/ui/theme/ThemeContext";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { PricingCard } from "@/components/pricing/PricingCard";
 
 const pricingData = [
   {

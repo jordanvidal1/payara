@@ -1,0 +1,27 @@
+.price-container {
+  @apply mt-5 flex items-center gap-1.5;
+}
+
+.price-amount {
+  @apply text-xl font-bold;
+}
+
+.price-amount-default {
+  @apply text-violet-950 dark:text-violet-50;
+}
+
+.price-amount-highlighted {
+  @apply text-white;
+}
+
+.price-period {
+  @apply text-base;
+}
+
+.price-period-default {
+  @apply text-gray-700 dark:text-gray-100;
+}
+
+.price-period-highlighted {
+  @apply text-violet-50 dark:text-gray-100;
+}
