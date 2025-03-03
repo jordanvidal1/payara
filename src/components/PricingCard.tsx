@@ -25,16 +25,16 @@ export function PricingCard({
   return (
     <div
       className={clsx(
-        "OurPlan-Box",
-        isHighlighted ? "OurPlan-Box-Focus" : "OurPlan-Box-Default"
+        "our-plan-box",
+        isHighlighted ? "our-plan-box-focus" : "our-plan-box-default"
       )}
     >
       <h3
         className={clsx(
           "text-lg font-medium",
           isHighlighted
-            ? "OurPlan-Box-Focus-Title"
-            : "OurPlan-Box-Default-Title"
+            ? "our-plan-box-focus-title"
+            : "our-plan-box-default-title"
         )}
       >
         {title}
@@ -43,8 +43,8 @@ export function PricingCard({
         className={clsx(
           "mt-3",
           isHighlighted
-            ? "OurPlan-Box-Focus-Subtitle"
-            : "OurPlan-Box-Default-Subtitle"
+            ? "our-plan-box-focus-subtitle"
+            : "our-plan-box-default-subtitle"
         )}
       >
         {description}
@@ -61,8 +61,8 @@ export function PricingCard({
         <span
           className={clsx(
             isHighlighted
-              ? "OurPlan-Box-Focus-Subtitle"
-              : "OurPlan-Box-Default-Subtitle"
+              ? "our-plan-box-focus-subtitle"
+              : "our-plan-box-default-subtitle"
           )}
         >
           / Month
@@ -71,8 +71,8 @@ export function PricingCard({
       <div className="mt-6">
         <button
           className={clsx(
-            "Btn",
-            isHighlighted ? "Btn-Primary" : "Btn-Secondary"
+            "btn",
+            isHighlighted ? "btn-primary" : "btn-secondary"
           )}
         >
           Get Started Now
@@ -84,19 +84,19 @@ export function PricingCard({
             {feature.included ? (
               <CheckIcon
                 className={clsx(
-                  "OurPlan-Icon",
+                  "our-plan-icon",
                   isHighlighted
-                    ? "OurPlan-Box-Focus-IconYes"
-                    : "OurPlan-Box-Default-IconYes"
+                    ? "our-plan-box-focus-icon-yes"
+                    : "our-plan-box-default-icon-yes"
                 )}
               />
             ) : (
               <XMarkIcon
                 className={clsx(
-                  "OurPlan-Icon",
+                  "our-plan-icon",
                   isHighlighted
-                    ? "OurPlan-Box-Focus-IconNo"
-                    : "OurPlan-Box-Default-IconNo"
+                    ? "our-plan-box-focus-icon-no"
+                    : "our-plan-box-default-icon-no"
                 )}
               />
             )}
@@ -104,11 +104,11 @@ export function PricingCard({
               className={clsx(
                 feature.included
                   ? isHighlighted
-                    ? "OurPlan-Box-Focus-TextYes"
-                    : "OurPlan-Box-Default-TextYes"
+                    ? "our-plan-box-focus-text-yes"
+                    : "our-plan-box-default-text-yes"
                   : isHighlighted
-                  ? "OurPlan-Box-Focus-TextNo"
-                  : "OurPlan-Box-Default-TextNo"
+                  ? "our-plan-box-focus-text-no"
+                  : "our-plan-box-default-text-no"
               )}
             >
               {feature.name}

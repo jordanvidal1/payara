@@ -9,28 +9,28 @@
 }
 
 @layer components {
-  .OurPlan-Background {
-    @apply bg-violet-100 dark:bg-gray-700 relative;
+  .our-plan-background {
+    @apply bg-violet-50 px-4 py-16 sm:px-6 dark:bg-gray-800;
   }
 
-  .OurPlan-Title {
+  .our-plan-title {
     @apply text-xl font-bold text-violet-950 dark:text-gray-50 sm:text-5xl;
   }
 
-  .OurPlan-Title-Violet {
+  .our-plan-title-violet {
     @apply text-violet-600 dark:text-violet-500;
   }
 
-  .OurPlan-Subtitle {
+  .our-plan-subtitle {
     @apply text-gray-600 dark:text-gray-400;
   }
 
   /* Default Card (Box/Default) */
-  .OurPlan-Box {
+  .our-plan-box {
     @apply rounded-md px-6 py-12 transition-all;
   }
 
-  .OurPlan-Box-Default {
+  .our-plan-box-default {
     @apply px-6 py-10;
     @apply bg-violet-100 dark:bg-gray-700;
     @apply relative z-0;
@@ -45,7 +45,7 @@
   }
 
   /* Focused Card (Box/Focus) */
-  .OurPlan-Box-Focus {
+  .our-plan-box-focus {
     @apply bg-violet-700 dark:bg-violet-700 text-gray-50;
     @apply shadow-light-lg dark:shadow-dark-lg;
 
@@ -61,75 +61,75 @@
     @apply lg:w-[calc(100%+32px)];
   }
 
-  /* Card Title */
-  .OurPlan-Box-Default-Title {
+  /* Card title */
+  .our-plan-box-default-title {
     @apply text-violet-950 dark:text-violet-50 text-4xl font-medium;
   }
 
-  .OurPlan-Box-Focus-Title {
+  .our-plan-box-focus-title {
     @apply text-gray-50 text-4xl font-medium;
   }
 
   /* Card Description */
-  .OurPlan-Box-Default-Subtitle {
+  .our-plan-box-default-subtitle {
     @apply text-gray-700 dark:text-gray-100;
   }
 
-  .OurPlan-Box-Focus-Subtitle {
+  .our-plan-box-focus-subtitle {
     @apply text-violet-50 dark:text-gray-100;
   }
 
   /* Card Icon */
-  .OurPlan-Icon {
+  .our-plan-icon {
     @apply p-2 rounded-full
            h-8 w-8
            flex items-center justify-center;
   }
 
-  .OurPlan-Box-Default-IconYes {
+  .our-plan-box-default-icon-yes {
     @apply text-violet-100 dark:text-gray-700 text-xl font-bold
            bg-violet-500 dark:bg-violet-300;
   }
 
-  .OurPlan-Box-Focus-IconYes {
+  .our-plan-box-focus-icon-yes {
     @apply text-violet-600 text-xl font-bold
            bg-gray-50;
   }
 
-  .OurPlan-Box-Default-IconNo {
+  .our-plan-box-default-icon-no {
     @apply text-violet-100 dark:text-gray-700 text-xl
            bg-violet-300 dark:bg-gray-500;
   }
 
-  .OurPlan-Box-Focus-IconNo {
+  .our-plan-box-focus-icon-no {
     @apply text-violet-700 text-xl
            bg-violet-500;
   }
 
   /* Feature Text */
-  .OurPlan-Box-Default-TextNo {
+  .our-plan-box-default-text-no {
     @apply text-violet-400 dark:text-gray-400;
   }
 
-  .OurPlan-Box-Focus-TextNo {
+  .our-plan-box-focus-text-no {
     @apply text-violet-400;
   }
 
-  .OurPlan-Box-Default-TextYes {
+  .our-plan-box-default-text-yes {
     @apply text-violet-950 dark:text-violet-100;
   }
 
-  .OurPlan-Box-Focus-TextYes {
+  .our-plan-box-focus-text-yes {
     @apply text-gray-50;
   }
 
   /* Buttons */
-  .Btn {
+  .btn {
     @apply w-full rounded-xs py-2.5 transition-all;
   }
 
   /* Primary Button - for highlighted card */
-  .Btn-Primary {
+  .btn-primary {
     /* Base Styles */
     @apply text-violet-50 dark:text-violet-700 
          bg-orange-500 dark:bg-violet-50 
@@ -148,7 +148,7 @@
   }
 
   /* Secondary Button - for normal cards */
-  .Btn-Secondary {
+  .btn-secondary {
     /* Base Styles */
     @apply bg-violet-100 dark:bg-gray-600 
            text-violet-700 dark:text-violet-300 
