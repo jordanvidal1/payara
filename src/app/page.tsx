@@ -59,7 +59,7 @@ const pricingData = [
 export default function Home() {
   return (
     <ThemeProvider>
-      <main className="min-h-screen bg-violet-50 px-4 py-16 dark:bg-gray-800">
+      <main className="min-h-screen bg-violet-50 px-4 py-16 sm:px-6 dark:bg-gray-800">
         <ThemeToggle />
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
@@ -71,7 +71,7 @@ export default function Home() {
               Choose a plan that's right for you
             </p>
           </div>
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
             {pricingData.map((plan, index) => (
               <PricingCard
                 key={plan.title}

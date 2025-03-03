@@ -36,11 +36,11 @@
     @apply relative z-0;
 
     &:first-child {
-      @apply left-6;
+      @apply lg:left-6;
     }
 
     &:last-child {
-      @apply right-6;
+      @apply lg:right-6;
     }
   }
 
@@ -48,10 +48,17 @@
   .OurPlan-Box-Focus {
     @apply bg-violet-700 dark:bg-violet-700 text-gray-50;
     @apply shadow-light-lg dark:shadow-dark-lg;
-    @apply -my-8 -mx-4;
-    @apply py-[72px];
+
+    @apply -my-12 -ml-1;
+    @apply w-[calc(100%+8px)];
     @apply relative z-10;
-    @apply w-[calc(100%+32px)];
+
+    @apply sm:-ml-2;
+    @apply sm:w-[calc(100%+16px)];
+
+    @apply lg:-my-8 lg:-mx-4;
+    @apply lg:py-[72px];
+    @apply lg:w-[calc(100%+32px)];
   }
 
   /* Card Title */
