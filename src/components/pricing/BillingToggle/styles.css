@@ -2,6 +2,17 @@
   @apply flex items-center justify-center gap-4 mt-8;
 }
 
+@media (max-width: 1023px) {
+  .billing-toggle-container {
+    @apply fixed bottom-8 left-1/2 -translate-x-1/2 z-50;
+    @apply bg-white dark:bg-gray-800 shadow-lg rounded-full;
+    @apply px-8 py-3;
+    @apply border border-violet-200 dark:border-violet-700;
+    @apply flex items-center justify-center gap-4;
+    min-width: min(90vw, 400px);
+  }
+}
+
 .billing-period {
   @apply text-gray-600 dark:text-gray-400 font-medium;
 }
@@ -10,8 +21,22 @@
   @apply text-violet-700 dark:text-violet-300;
 }
 
+@media (max-width: 390px) {
+  .billing-toggle-container {
+    @apply px-4 gap-2;
+  }
+
+  .billing-period {
+    @apply text-sm;
+  }
+
+  .billing-discount {
+    @apply ml-1 px-1.5 text-xs whitespace-nowrap;
+  }
+}
+
 .billing-switch {
-  @apply relative inline-flex h-7 w-14 items-center rounded-full;
+  @apply relative inline-flex h-7 w-14 items-center rounded-full cursor-pointer;
   @apply transition-colors duration-200 ease-in-out;
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500;
 }
