@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PricingCard } from "./index";
 import { PricingProvider } from "../../ui/pricing/PricingContext";
 import { ThemeProvider } from "../../ui/theme/ThemeContext";
+import { expect, within } from "@storybook/test";
 
 const meta: Meta<typeof PricingCard> = {
   title: "Pricing/PricingCard",
@@ -61,6 +62,25 @@ export const Basic: Story = {
     features: sampleFeatures,
     isHighlighted: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Test if title is rendered
+    const title = canvas.getByText("Starter");
+    expect(title).toBeInTheDocument();
+
+    // Test if price is rendered
+    const price = canvas.getByText("$29");
+    expect(price).toBeInTheDocument();
+
+    // Test if features are rendered
+    const includedFeature = canvas.getByText("10 users included");
+    expect(includedFeature).toBeInTheDocument();
+
+    // Test if non-included features are styled differently
+    const nonIncludedFeature = canvas.getByText("24/7 phone support");
+    expect(nonIncludedFeature).toHaveClass("feature-text-no-default");
+  },
 };
 
 export const Premium: Story = {
@@ -70,6 +90,17 @@ export const Premium: Story = {
     price: 99,
     features: sampleFeatures.map((f, i) => ({ ...f, included: i < 4 })),
     isHighlighted: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Test if highlighted card has special styling
+    const card = canvas.getByTestId("pricing-card");
+    expect(card).toHaveClass("our-plan-box", "our-plan-box-focus");
+
+    // Test if more features are included compared to Basic
+    const phoneSupport = canvas.getByText("24/7 phone support");
+    expect(phoneSupport).toHaveClass("feature-text-yes-highlighted");
   },
 };
 

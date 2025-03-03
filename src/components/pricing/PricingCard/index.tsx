@@ -23,6 +23,7 @@ export function PricingCard({
 }: PricingCardProps) {
   return (
     <div
+      data-testid="pricing-card"
       className={clsx(
         "our-plan-box",
         isHighlighted ? "our-plan-box-focus" : "our-plan-box-default"

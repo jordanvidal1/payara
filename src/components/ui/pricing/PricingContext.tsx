@@ -5,19 +5,37 @@ export type BillingPeriod = "monthly" | "yearly";
 interface PricingContextType {
   billingPeriod: BillingPeriod;
   toggleBillingPeriod: () => void;
+  yearlyDiscount: number;
+  setYearlyDiscount: (discount: number) => void;
 }
 
 const PricingContext = createContext<PricingContextType | undefined>(undefined);
 
-export function PricingProvider({ children }: { children: React.ReactNode }) {
+export interface PricingProviderProps {
+  children: React.ReactNode;
+  initialDiscount?: number;
+}
+
+export function PricingProvider({
+  children,
+  initialDiscount = 20,
+}: PricingProviderProps) {
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
+  const [yearlyDiscount, setYearlyDiscount] = useState(initialDiscount);
 
   const toggleBillingPeriod = () => {
     setBillingPeriod((prev) => (prev === "monthly" ? "yearly" : "monthly"));
   };
 
   return (
-    <PricingContext.Provider value={{ billingPeriod, toggleBillingPeriod }}>
+    <PricingContext.Provider
+      value={{
+        billingPeriod,
+        toggleBillingPeriod,
+        yearlyDiscount,
+        setYearlyDiscount,
+      }}
+    >
       {children}
     </PricingContext.Provider>
   );

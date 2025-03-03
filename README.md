@@ -11,6 +11,8 @@ A modern, responsive pricing page built with Next.js, TypeScript, and Tailwind C
 - 🎯 TypeScript support
 - 🎭 Customizable pricing cards
 - 🎉 Smooth transitions and animations
+- 💰 Monthly/Yearly billing toggle with discount
+- ✅ Comprehensive test coverage
 
 ## Tech Stack
 
@@ -19,7 +21,10 @@ A modern, responsive pricing page built with Next.js, TypeScript, and Tailwind C
 - Tailwind CSS
 - Headless UI
 - Hero Icons
+- Framer Motion
 - clsx & tailwind-merge for conditional styling
+- Jest & React Testing Library
+- Storybook
 
 ## Getting Started
 
@@ -34,18 +39,58 @@ A modern, responsive pricing page built with Next.js, TypeScript, and Tailwind C
    ```
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## Testing
+
+The project includes several types of tests:
+
+### Unit Tests
+
+Run unit tests with:
+
+```bash
+npm test
+```
+
+Run tests in watch mode:
+
+```bash
+npm test -- --watch
+```
+
+### E2E Tests
+
+End-to-end tests use React Testing Library for component integration testing:
+
+```bash
+npm test PricingCard.e2e.test.tsx
+```
+
+### Storybook Tests
+
+Component stories include built-in tests. Run Storybook with:
+
+```bash
+npm run storybook
+```
+
 ## Project Structure
 
 ```
 src/
 ├── app/
-│   └── page.tsx           # Main page component
+│   └── page.tsx              # Main page component
 ├── components/
-│   ├── PricingCard.tsx    # Pricing card component
-│   ├── ThemeProvider.tsx  # Theme context provider
-│   └── ThemeToggle.tsx    # Theme toggle button
+│   ├── pricing/
+│   │   ├── PricingCard/     # Pricing card component and tests
+│   │   ├── BillingToggle/   # Billing period toggle
+│   │   ├── FeatureList/     # Feature list component
+│   │   └── Price/           # Price display component
+│   └── ui/
+│       ├── Button/          # Reusable button component
+│       ├── theme/           # Theme context and provider
+│       └── pricing/         # Pricing context and provider
 └── styles/
-    └── theme.ts           # Theme configuration
+    └── theme.css            # Theme styles
 ```
 
 ## Customization
@@ -54,10 +99,6 @@ The pricing cards data can be customized in `src/app/page.tsx`. Each card suppor
 
 - Title
 - Description
-- Monthly price
+- Monthly price (yearly prices calculated automatically with 20% discount)
 - Feature list with included/excluded items
 - Highlighted state for emphasis
-
-## License
-
-MIT

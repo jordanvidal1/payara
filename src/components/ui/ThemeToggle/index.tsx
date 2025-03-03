@@ -5,13 +5,18 @@ import { useTheme } from "../theme/ThemeContext";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <button onClick={toggleTheme} className="theme-toggle">
-      {theme === "dark" ? (
-        <SunIcon className="theme-toggle-icon" />
+    <button
+      onClick={toggleTheme}
+      className="theme-toggle"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {isDark ? (
+        <SunIcon className="theme-toggle-icon" aria-hidden="true" />
       ) : (
-        <MoonIcon className="theme-toggle-icon" />
+        <MoonIcon className="theme-toggle-icon" aria-hidden="true" />
       )}
     </button>
   );

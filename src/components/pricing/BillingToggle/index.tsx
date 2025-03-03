@@ -6,7 +6,7 @@ import { usePricing } from "../../ui/pricing/PricingContext";
 import { clsx } from "clsx";
 
 export function BillingToggle() {
-  const { billingPeriod, toggleBillingPeriod } = usePricing();
+  const { billingPeriod, toggleBillingPeriod, yearlyDiscount } = usePricing();
   const isYearly = billingPeriod === "yearly";
 
   return (
@@ -42,7 +42,7 @@ export function BillingToggle() {
         className={clsx("billing-period", isYearly && "billing-period-active")}
       >
         Yearly
-        <span className="billing-discount">Save 20%</span>
+        <span className="billing-discount">Save {yearlyDiscount}%</span>
       </span>
     </div>
   );

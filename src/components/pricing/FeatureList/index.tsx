@@ -23,6 +23,7 @@ export function FeatureList({
         <li key={index} className="feature-item">
           {feature.included ? (
             <CheckIcon
+              data-testid={`feature-icon-${index}`}
               className={clsx(
                 "feature-icon",
                 isHighlighted
@@ -32,6 +33,7 @@ export function FeatureList({
             />
           ) : (
             <XMarkIcon
+              data-testid={`feature-icon-${index}`}
               className={clsx(
                 "feature-icon",
                 isHighlighted
