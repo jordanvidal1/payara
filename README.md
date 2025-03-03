@@ -81,20 +81,36 @@ npm run storybook
 
 ```
 src/
-├── app/
-│   └── page.tsx              # Main page component
-├── components/
-│   ├── pricing/
-│   │   ├── PricingCard/     # Pricing card component and tests
-│   │   ├── BillingToggle/   # Billing period toggle
-│   │   ├── FeatureList/     # Feature list component
-│   │   └── Price/           # Price display component
-│   └── ui/
-│       ├── Button/          # Reusable button component
-│       ├── theme/           # Theme context and provider
-│       └── pricing/         # Pricing context and provider
-└── styles/
-    └── theme.css            # Theme styles
+├── app/                     # Next.js app directory
+│   ├── globals.css         # Global CSS styles
+│   ├── layout.tsx         # Root layout component
+│   └── page.tsx           # Main page component
+├── components/            # Reusable components
+│   ├── pricing/          # Pricing-related components
+│   │   ├── PricingCard/  # Pricing card component
+│   │   ├── BillingToggle/# Billing toggle component
+│   │   ├── Price/        # Price display component
+│   │   └── FeatureList/  # Feature list component
+│   └── ui/               # UI components
+│       ├── ThemeToggle/  # Theme toggle component
+│       ├── Button/       # Button component
+│       ├── pricing/      # Pricing UI utilities
+│       └── theme/        # Theme context and utilities
+├── styles/               # Global styles
+│   └── theme.ts         # Theme configuration
+└── types/               # TypeScript type definitions
+    └── jest.d.ts        # Jest type definitions
+
+Additional project files:
+├── .storybook/            # Storybook configuration
+├── __mocks__/             # Jest mocks
+├── public/                # Static assets
+├── jest.config.js         # Jest configuration
+├── jest.setup.js          # Jest setup
+├── next.config.js         # Next.js configuration
+├── postcss.config.js      # PostCSS configuration
+├── tailwind.config.ts     # Tailwind CSS configuration
+└── tsconfig.json          # TypeScript configuration
 ```
 
 ## Customization
