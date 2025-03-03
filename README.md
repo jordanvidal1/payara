@@ -26,6 +26,10 @@ A modern, responsive pricing page built with Next.js, TypeScript, and Tailwind C
 - Jest & React Testing Library
 - Storybook
 
+## Deployment
+
+The project is live at [https://payara-virid.vercel.app/](https://payara-virid.vercel.app/)
+
 ## Getting Started
 
 1. Clone the repository
