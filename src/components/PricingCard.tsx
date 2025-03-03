@@ -25,8 +25,8 @@ export function PricingCard({
   return (
     <div
       className={clsx(
-        "OurPlan-Box-Default-Background",
-        isHighlighted && "OurPlan-Box-Focus-Background"
+        "OurPlan-Box",
+        isHighlighted ? "OurPlan-Box-Focus" : "OurPlan-Box-Default"
       )}
     >
       <h3
@@ -41,7 +41,7 @@ export function PricingCard({
       </h3>
       <p
         className={clsx(
-          "mt-2",
+          "mt-3",
           isHighlighted
             ? "OurPlan-Box-Focus-Subtitle"
             : "OurPlan-Box-Default-Subtitle"
@@ -49,7 +49,7 @@ export function PricingCard({
       >
         {description}
       </p>
-      <p className="mt-6 flex items-center gap-1.5">
+      <p className="mt-5 flex items-center gap-1.5">
         <span
           className={clsx(
             "text-xl font-bold",

@@ -10,7 +10,7 @@
 
 @layer components {
   .OurPlan-Background {
-    @apply bg-violet-100 dark:bg-gray-700;
+    @apply bg-violet-100 dark:bg-gray-700 relative;
   }
 
   .OurPlan-Title {
@@ -26,15 +26,32 @@
   }
 
   /* Default Card (Box/Default) */
-  .OurPlan-Box-Default-Background {
+  .OurPlan-Box {
     @apply rounded-md px-6 py-12 transition-all;
+  }
+
+  .OurPlan-Box-Default {
+    @apply px-6 py-10;
     @apply bg-violet-100 dark:bg-gray-700;
+    @apply relative z-0;
+
+    &:first-child {
+      @apply left-6;
+    }
+
+    &:last-child {
+      @apply right-6;
+    }
   }
 
   /* Focused Card (Box/Focus) */
-  .OurPlan-Box-Focus-Background {
+  .OurPlan-Box-Focus {
     @apply bg-violet-700 dark:bg-violet-700 text-gray-50;
     @apply shadow-light-lg dark:shadow-dark-lg;
+    @apply -my-8 -mx-4;
+    @apply py-[72px];
+    @apply relative z-10;
+    @apply w-[calc(100%+32px)];
   }
 
   /* Card Title */
